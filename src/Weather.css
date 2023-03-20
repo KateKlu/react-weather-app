@@ -16,6 +16,10 @@
   padding: 0;
 }
 
+.Weather .weatherDescription::first-letter {
+  text-transform: capitalize;
+}
+
 .Weather img {
   position: relative;
   top: -20px;
