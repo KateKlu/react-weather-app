@@ -20,12 +20,12 @@
   text-transform: capitalize;
 }
 
-.Weather img {
+.Weather canvas {
   position: relative;
-  top: -20px;
-  height: 64px;
-  width: 64px;
-  margin-right: 10px;
+  top: 8px;
+  height: 60px;
+  width: 60px;
+  margin-right: 5px;
 }
 
 .Weather .Temperature {
