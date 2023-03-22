@@ -25,7 +25,7 @@
   top: 8px;
   height: 60px;
   width: 60px;
-  margin-right: 5px;
+  margin-right: 7px;
 }
 
 .Weather .Temperature {
@@ -37,4 +37,8 @@
 .Weather .Units {
   position: relative;
   top: -34px;
+}
+
+.Weather a {
+  text-decoration: none;
 }
