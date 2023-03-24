@@ -6,6 +6,8 @@
 }
 
 .Weather h1 {
+  color: rgb(82, 82, 82);
+  font-weight: 600;
   font-size: 24px;
   margin: 20px 0 0;
 }
@@ -28,7 +30,7 @@
 
 .Weather .Temperature {
   font-size: 64px;
-  color: black;
+  color: rgb(82, 82, 82);
   line-height: 60px;
   margin-left: 10px;
 }

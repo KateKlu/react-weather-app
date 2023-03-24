@@ -13,6 +13,7 @@ export default function Weather(props) {
     setWeatherData({
       ready: true,
       city: response.data.name,
+      country: response.data.sys.country,
       data: new Date(response.data.dt * 1000),
       temp: response.data.main.temp,
       description: response.data.weather[0].description,

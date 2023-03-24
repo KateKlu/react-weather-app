@@ -15,7 +15,7 @@ export default function WeatherForecastDay(props) {
 
   function showMinTemp() {
     let temperature = Math.round(props.forecast.temp.min);
-    return `${temperature}°`;
+    return `/ ${temperature}°`;
   }
 
   return (
