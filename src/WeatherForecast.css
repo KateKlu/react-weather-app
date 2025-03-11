@@ -1,13 +1,32 @@
 .WeatherForecast {
-  text-align: center;
-  margin-top: 20px;
+   text-align: center;
+   margin-top: 15px;
+}
+
+.WeatherForecast .ForecastDay {
+   padding: 0 6px;
 }
 
 .WeatherForecast-temp-min {
-  margin-left: 5px;
-  opacity: 0.6;
+   margin-left: 3px;
+   opacity: 0.6;
 }
 
 .WeatherForecast-temp-max {
-  color: rgb(82, 82, 82);
+   color: rgb(82, 82, 82);
+}
+
+@media (min-width: 576px) {
+   .WeatherForecast {
+      text-align: center;
+      margin-top: 20px;
+   }
+
+   .WeatherForecast .ForecastDay {
+      padding: 0 12px;
+   }
+
+   .WeatherForecast-temp-min {
+      margin-left: 5px;
+   }
 }

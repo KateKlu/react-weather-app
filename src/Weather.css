@@ -1,45 +1,73 @@
 .Weather {
-  border: 1px solid #878787;
-  border-radius: 5px;
-  padding: 20px;
-  color: #878787;
+   border: 1px solid #878787;
+   border-radius: 5px;
+   padding: 10px;
+   color: #878787;
+}
+
+.Weather .SearchInput {
+   padding-right: 3px;
+}
+
+.Weather .SearchBtn {
+   padding-left: 3px;
+}
+
+.Weather .SearchBtnText {
+   font-size: 12px;
 }
 
 .Weather h1 {
-  color: rgb(82, 82, 82);
-  font-weight: 600;
-  font-size: 24px;
-  margin: 20px 0 0;
+   color: rgb(82, 82, 82);
+   font-weight: 600;
+   font-size: 24px;
+   margin: 20px 0 0;
 }
 
 .Weather ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+   list-style: none;
+   margin: 0;
+   padding: 0;
 }
 
 .Weather .weatherDescription::first-letter {
-  text-transform: capitalize;
+   text-transform: capitalize;
 }
 
 .Weather canvas {
-  /* position: relative;
-  top: 8px; */
-  margin-top: 5px;
+   margin-top: 5px;
 }
 
 .Weather .Temperature {
-  font-size: 64px;
-  color: rgb(82, 82, 82);
-  line-height: 60px;
-  margin-left: 10px;
+   font-size: 64px;
+   color: rgb(82, 82, 82);
+   line-height: 60px;
+   margin-left: 10px;
 }
 
 .Weather .Units {
-  position: relative;
-  top: -34px;
+   position: relative;
+   top: -34px;
 }
 
 .Weather a {
-  text-decoration: none;
+   text-decoration: none;
+}
+
+@media (min-width: 576px) {
+   .Weather {
+      padding: 20px;
+   }
+
+   .Weather .SearchInput {
+      padding-right: 5px;
+   }
+
+   .Weather .SearchBtn {
+      padding-left: 5px;
+   }
+
+   .Weather .SearchBtnText {
+      font-size: 16px;
+   }
 }

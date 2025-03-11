@@ -1,10 +1,23 @@
 .App {
-  font-family: arial, sans-serif;
-  margin: 30px auto;
-  max-width: 600px;
+   font-family: arial, sans-serif;
+   font-size: 12px;
+   margin: 20px auto;
 }
 
 .App footer {
-  font-size: 11px;
-  margin-top: 10px;
+   font-size: 10px;
+   margin-top: 4px;
+}
+
+@media (min-width: 576px) {
+   .App {
+      font-size: 16px;
+      margin: 30px auto;
+      max-width: 600px;
+   }
+
+   .App footer {
+      font-size: 11px;
+      margin-top: 10px;
+   }
 }
