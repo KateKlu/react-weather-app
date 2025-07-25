@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# ⛅ React Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Weather app mock‑up showing desktop & mobile](./weather_scrin.png)
 
-## Available Scripts
+Live Demo → https://online-weather-react.netlify.app/
 
-In the project directory, you can run:
+A single‑page React weather app that shows current conditions and a multi‑day forecast in seconds. Type a city, hit Enter – you get temperature, humidity, wind, weather icons, and daily highs & lows, all in a clean responsive layout.
 
-### `npm start`
+## Why I built it
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I wanted a lightweight, client‑only weather dashboard: no backend, just React + a public API. It’s a good exercise in handling async data, conditional rendering, and error states (city not found, network issues) while keeping the UI polished and fast.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Key Features
 
-### `npm test`
+-  Instant lookup. Current weather + forecast returned on one screen.
+-  Unit toggle. Switch between °C and °F.
+-  Forecast cards. Daily highs/lows with weather icons.
+-  Responsive by design. Bootstrap grid + custom CSS; quick load times.
+-  Pure front‑end. React + Axios over HTTPS, deployed on Netlify.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
 
-### `npm run build`
+-  **UI:** React 18 with Hooks for state; Bootstrap 5 utilities for layout
+-  **Data:** OpenWeather (Current & Forecast endpoints)
+-  **HTTP:** Axios – small, promise‑based, straightforward error handling
+-  **Dev:** Create React App scaffold, ESLint + Prettier for code quality
+-  **Deploy:** Netlify CI/CD on every push to `main`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How it Works
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. On load (or submit), the app requests current weather for the typed city.
+2. After a successful response, a second call fetches the multi‑day forecast.
+3. Components (`Weather`, `Forecast`, etc.) render the data in compact cards.
+4. Error paths (empty input / city not found / network error) trigger a modal.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## What I learned
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-  Managing multiple async calls and keeping state in sync with `useState` + `useEffect`.
+-  Handling edge cases (invalid city, API errors) without breaking the UI.
+-  Setting up a smooth Netlify deploy pipeline with environment variables for API keys.
