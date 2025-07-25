@@ -1,30 +1,32 @@
-import React from 'react';
 import WeatherIcon from './WeatherIcon';
+import WeatherTemperature from './WeatherTemperature';
 
-export default function WeatherForecastDay(props) {
+export default function WeatherForecastDay({ forecast, unit }) {
    function showDay() {
-      let date = new Date(props.forecast.dt * 1000);
+      let date = new Date(forecast.dt * 1000);
       let weekDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
       return `${weekDay[date.getDay()]}`;
    }
 
    function showMaxTemp() {
-      let temperature = Math.round(props.forecast.main.temp_max);
-      return `${temperature}°`;
+      return (
+         <WeatherTemperature celsius={forecast.main.temp_max} unit={unit} />
+      );
    }
 
    function showMinTemp() {
-      let temperature = Math.round(props.forecast.main.temp_min);
-      return `/ ${temperature}°`;
+      return (
+         <WeatherTemperature celsius={forecast.main.temp_min} unit={unit} />
+      );
    }
 
    return (
       <div className="WeatherForecastDay">
          <div className="WeatherForecast-day">{showDay()}</div>
-         <WeatherIcon code={props.forecast.weather[0].icon} size={30} />
+         <WeatherIcon code={forecast.weather[0].icon} size={30} />
          <div className="WeatherForecast-temp">
-            <span className="WeatherForecast-temp-max">{showMaxTemp()}</span>
-            <span className="WeatherForecast-temp-min">{showMinTemp()}</span>
+            <span className="WeatherForecast-temp-max">{showMaxTemp()}° /</span>
+            <span className="WeatherForecast-temp-min">{showMinTemp()}°</span>
          </div>
       </div>
    );

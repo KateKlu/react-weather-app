@@ -9,6 +9,7 @@ import './Weather.css';
 export default function Weather(props) {
    const [weatherData, setWeatherData] = useState({ ready: false });
    const [city, setCity] = useState(props.defaultCity);
+   const [unit, setUnit] = useState('celsius');
    const [isLoading, setIsLoading] = useState(false);
    const [showModal, setShowModal] = useState(false);
    const [modalMsg, setModalMsg] = useState('');
@@ -100,8 +101,11 @@ export default function Weather(props) {
 
          {!isLoading && weatherData.ready && (
             <>
-               <WeatherInfo data={weatherData} />
-               <WeatherForecast coordinates={weatherData.coordinates} />
+               <WeatherInfo data={weatherData} unit={unit} setUnit={setUnit} />
+               <WeatherForecast
+                  coordinates={weatherData.coordinates}
+                  unit={unit}
+               />
             </>
          )}
 

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import WeatherForecastDay from './WeatherForecastDay';
 import './WeatherForecast.css';
 
-export default function WeatherForecast(props) {
+export default function WeatherForecast({ coordinates, unit }) {
    const [loaded, setLoaded] = useState(false);
    const [weatherForecast, setWeatherForecast] = useState(null);
 
@@ -14,8 +14,8 @@ export default function WeatherForecast(props) {
 
    function search() {
       const apiKey = 'ed55b36e362d8733f7d859247cedeaf2';
-      let lat = `${props.coordinates.lat}`;
-      let lon = `${props.coordinates.lon}`;
+      let lat = `${coordinates.lat}`;
+      let lon = `${coordinates.lon}`;
       let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
       axios.get(apiUrl).then(handleResponse);
@@ -23,7 +23,7 @@ export default function WeatherForecast(props) {
 
    useEffect(() => {
       setLoaded(false);
-   }, [props.coordinates]);
+   }, [coordinates]);
 
    if (loaded) {
       return (
@@ -33,7 +33,10 @@ export default function WeatherForecast(props) {
                   if (index < 5) {
                      return (
                         <div className="col ForecastDay" key={index}>
-                           <WeatherForecastDay forecast={dailyForecast} />
+                           <WeatherForecastDay
+                              forecast={dailyForecast}
+                              unit={unit}
+                           />
                         </div>
                      );
                   } else {
@@ -44,7 +47,6 @@ export default function WeatherForecast(props) {
          </div>
       );
    } else {
-      console.log(loaded);
       search();
       return null;
    }
